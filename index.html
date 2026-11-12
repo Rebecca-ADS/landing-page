@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Zero ao Site – Webinar gratuito</title>
+  <meta name="description" content="Webinar gratuito para criar seu primeiro site com HTML, CSS e JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Do Zero ao Site</h1>
+    <p class="slogan">Um webinar gratuito para você publicar sua primeira página com HTML, CSS e JavaScript.</p>
+    <a href="#contato" class="btn" id="btn-cta">Quero participar</a>
+  </header>
+
+  <main>
+    <section class="info">
+      <h2>O que você vai aprender</h2>
+      <ul>
+        <li>Estruturar uma página com HTML semântico</li>
+        <li>Estilizar com CSS: cores, fontes e layout responsivo</li>
+        <li>Adicionar interação com JavaScript</li>
+        <li>Publicar o site de graça no GitHub Pages</li>
+      </ul>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2>Garanta sua vaga</h2>
+      <p>Preencha o formulário e enviaremos o link de acesso por e-mail.</p>
+
+      <form id="form" novalidate>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000">
+        <small id="cep-status" role="status"></small>
+
+        <div class="linha">
+          <div>
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" name="rua" readonly>
+          </div>
+          <div>
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" readonly>
+          </div>
+        </div>
+        <div class="linha">
+          <div>
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" readonly>
+          </div>
+          <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf" name="uf" readonly>
+          </div>
+        </div>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Alguma dúvida ou tema que gostaria de ver?"></textarea>
+
+        <button type="submit" class="btn">Enviar inscrição</button>
+        <p id="resposta" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Do Zero ao Site. Projeto acadêmico.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

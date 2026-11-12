@@ -1,0 +1,96 @@
+/* Paleta: verde-tinta (#12302B), menta clara (#E3EFE9), fundo (#F6F8F6), coral (#E4572E) */
+:root {
+  --tinta: #12302b;
+  --menta: #e3efe9;
+  --fundo: #f6f8f6;
+  --coral: #e4572e;
+  --coral-escuro: #c4431f;
+  --texto: #1b2a27;
+  --erro: #b3261e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+h1, h2 {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+/* Cabeçalho */
+.hero {
+  background: var(--tinta);
+  color: var(--fundo);
+  text-align: center;
+  padding: 6rem 1.5rem 5rem;
+}
+.hero h1 { font-size: clamp(2.8rem, 9vw, 5.5rem); font-weight: 800; }
+.slogan { max-width: 36rem; margin: 0 auto 2rem; color: var(--menta); }
+
+/* Botão */
+.btn {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  font: 600 1.1rem "Source Sans 3", sans-serif;
+  padding: 0.85rem 1.8rem;
+  border: 0;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--coral-escuro); }
+.btn:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 2px;
+}
+
+/* Seções */
+section { max-width: 40rem; margin: 0 auto; padding: 4rem 1.5rem; }
+h2 { font-size: 2rem; font-weight: 800; color: var(--tinta); }
+
+.info ul { padding-left: 1.2rem; }
+.info li { margin-bottom: 0.5rem; }
+
+.contato {
+  background: var(--menta);
+  max-width: none;
+}
+.contato > * { max-width: 40rem; margin-left: auto; margin-right: auto; }
+
+/* Formulário */
+form { display: grid; gap: 0.4rem; margin-top: 1.5rem; }
+label { font-weight: 600; margin-top: 0.6rem; }
+input, textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border: 1.5px solid #9db8ad;
+  border-radius: 6px;
+  background: #fff;
+}
+input[readonly] { background: #f0f5f2; }
+input.invalido, textarea.invalido { border-color: var(--erro); }
+.linha { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.linha > div { display: grid; }
+form .btn { margin-top: 1.2rem; justify-self: start; }
+
+#cep-status { min-height: 1.2rem; font-size: 0.95rem; }
+#cep-status.erro, #resposta.erro { color: var(--erro); }
+#resposta { font-weight: 600; color: var(--tinta); min-height: 1.5rem; }
+
+footer { text-align: center; padding: 2rem 1rem; font-size: 0.95rem; color: var(--tinta); }
+
+@media (max-width: 480px) {
+  .linha { grid-template-columns: 1fr; }
+}
